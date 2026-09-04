@@ -9,21 +9,22 @@ export default function Combo() {
   return (
     <Slide index={SLIDES.COMBO} className="combo">
       <div className="container">
-        <Reveal tag="span" className="section-kicker">
-          El plan de estudios
+        <Reveal tag="h2" className="combo__title" pop y={44}>
+          El combo <Marker delay={0.45}>perfecto</Marker>
         </Reveal>
-        <Reveal tag="h2" className="combo__title" delay={0.05}>
-          El combo{" "}
-          <Marker color="yellow" delay={0.4}>
-            perfecto
-          </Marker>
-        </Reveal>
-        <Reveal tag="p" className="combo__formula" delay={0.1}>
+        <Reveal tag="p" className="combo__formula" delay={0.18} y={46} pop rotate={-1}>
           La Cápsula Creativa <span>+</span> Flowly <span>+</span> El Propulsor
         </Reveal>
 
         <div className="combo__grid">
-          <Reveal tag="article" className="combo-card" delay={0.15}>
+          <Reveal
+            tag="article"
+            className="combo-card"
+            delay={0.2}
+            pop
+            rotate={-1.5}
+            whileHover={{ rotate: 0, y: -4 }}
+          >
             <span className="combo-card__icon">🎓</span>
             <h3>La Cápsula Creativa</h3>
             <p>
@@ -35,7 +36,14 @@ export default function Combo() {
             </Cta>
           </Reveal>
 
-          <Reveal tag="article" className="combo-card" delay={0.25}>
+          <Reveal
+            tag="article"
+            className="combo-card"
+            delay={0.32}
+            pop
+            rotate={1.5}
+            whileHover={{ rotate: 0, y: -4 }}
+          >
             <span className="combo-card__icon">🗂️</span>
             <h3>Flowly</h3>
             <p>
@@ -46,15 +54,13 @@ export default function Combo() {
           </Reveal>
         </div>
 
-        <Reveal tag="p" className="combo__bridge" delay={0.1}>
-          La Cápsula te enseña a crear.{" "}
-          <Marker color="turquoise" delay={0.3}>
-            Flowly
-          </Marker>{" "}
-          es la app desde la que creas y centralizas la gestión de todo tu contenido.
-        </Reveal>
-
-        <Reveal tag="article" className="combo-card combo-card--propulsor" delay={0.1}>
+        <Reveal
+          tag="article"
+          className="combo-card combo-card--propulsor"
+          delay={0.42}
+          pop
+          whileHover={{ y: -4 }}
+        >
           <Sparkle className="combo-card__sparkle" />
           <span className="combo-card__icon">🚀</span>
           <h3>Y el Propulsor</h3>
@@ -71,6 +77,13 @@ export default function Combo() {
 
         <Reveal tag="p" className="combo__closing" delay={0.15}>
           Ese es el combo completo.
+        </Reveal>
+
+        <Reveal tag="p" className="combo__bridge" delay={0.2}>
+          La Cápsula te enseña a crear. <Marker delay={0.4}>Flowly</Marker> es la app
+          desde la que creas y centralizas la gestión de todo tu contenido.
+          <br />
+          Y para finiquitar… El Propulsor lo hace posible en tiempo récord.
         </Reveal>
       </div>
     </Slide>

@@ -29,7 +29,15 @@ export default function Numbers() {
 
         <div className="numbers__grid">
           {blocks.map((b, i) => (
-            <Reveal tag="div" className="number-card" key={b.plan} delay={0.1 + i * 0.12}>
+            <Reveal
+              tag="div"
+              className="number-card"
+              key={b.plan}
+              delay={0.12 + i * 0.14}
+              pop
+              rotate={i % 2 === 0 ? -1.5 : 1.5}
+              whileHover={{ rotate: 0, y: -4 }}
+            >
               <span className="number-card__plan">Cápsula {b.plan}</span>
               <span className="number-card__price">{b.price}</span>
               <span className="number-card__gift">{b.gift}</span>
@@ -42,9 +50,7 @@ export default function Numbers() {
 
         <Reveal tag="p" className="numbers__bridge" delay={0.3}>
           Y todavía no hemos hablado de{" "}
-          <Marker color="yellow" delay={0.6}>
-            El Propulsor
-          </Marker>
+          <Marker delay={0.6}>El Propulsor</Marker>
           . Hasta ahora ha sido una herramienta exclusiva para quienes están dentro de
           La Cápsula. Muy pronto va a salir a la venta por separado, con suscripción
           mensual. Ahora mismo, sigue incluido sin coste extra.
@@ -56,9 +62,7 @@ export default function Numbers() {
 
         <Reveal tag="p" className="numbers__hype" delay={0.4}>
           Venga! que estamos en el mes de{" "}
-          <Marker color="turquoise" delay={0.7}>
-            "Esta vez sí que sí"
-          </Marker>
+          <Marker delay={0.7}>"Esta vez sí que sí"</Marker>
           … Aprovéchalo — esta oferta se cierra el <strong>30 de septiembre</strong>{" "}
           para siempre.
         </Reveal>

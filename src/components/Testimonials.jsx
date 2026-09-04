@@ -15,7 +15,7 @@ export default function Testimonials() {
         <Reveal tag="span" className="section-kicker">
           Nuestra tripulación
         </Reveal>
-        <Reveal tag="h2" className="testimonials__title" delay={0.05}>
+        <Reveal tag="h2" className="testimonials__title" delay={0.05} pop y={40}>
           Lo que dice nuestra tripulación
         </Reveal>
 
@@ -25,8 +25,10 @@ export default function Testimonials() {
               tag="figure"
               className="testimonial-card"
               key={i}
-              style={{ "--rotate": `${slot.rotate}deg` }}
-              delay={0.15 + i * 0.1}
+              delay={0.18 + i * 0.12}
+              pop
+              rotate={slot.rotate}
+              whileHover={{ rotate: 0, y: -4 }}
             >
               <span className="testimonial-card__quote">"</span>
               <p className="testimonial-card__placeholder">

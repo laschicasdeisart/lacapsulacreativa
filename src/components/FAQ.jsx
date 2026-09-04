@@ -77,8 +77,8 @@ export default function FAQ() {
         <Reveal tag="span" className="section-kicker">
           Antes de que preguntes
         </Reveal>
-        <Reveal tag="h2" className="faq__title" delay={0.05}>
-          Preguntas rápidas
+        <Reveal tag="h2" className="faq__title" delay={0.05} pop y={40}>
+          Por si te lo estás preguntando…
         </Reveal>
 
         <div className="faq__list">

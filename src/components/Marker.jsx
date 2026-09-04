@@ -11,12 +11,14 @@ const PATHS = [
 
 let markCount = 0;
 
-// Resaltado automático tipo rotulador: se dibuja solo al entrar en el
-// slide (no depende del cursor), con un trazo ligeramente irregular y una
-// pequeña inclinación, como si lo hubieran marcado a mano.
-export default function Marker({ children, color = "turquoise", delay = 0, className = "" }) {
+// Resaltado automático tipo rotulador (siempre turquesa, en degradado
+// suave): se dibuja solo al entrar en el slide, no depende del cursor. El
+// texto en mayúsculas y en negrita es lo que destaca; la tinta es un
+// apoyo sutil detrás, no un bloque sólido.
+export default function Marker({ children, delay = 0, className = "" }) {
   const id = useMemo(() => markCount++, []);
   const path = PATHS[id % PATHS.length];
+  const gradientId = useMemo(() => `mark-ink-${id}`, [id]);
   const tilt = useMemo(() => (((id * 37) % 7) - 3) * 0.5, [id]);
 
   const isActive = useActiveSlide();
@@ -34,7 +36,7 @@ export default function Marker({ children, color = "turquoise", delay = 0, class
   }, [isActive, controls]);
 
   return (
-    <span className={`mark mark--${color} ${className}`}>
+    <span className={`mark ${className}`}>
       <motion.svg
         className="mark__ink"
         viewBox="0 0 300 44"
@@ -51,7 +53,16 @@ export default function Marker({ children, color = "turquoise", delay = 0, class
           },
         }}
       >
-        <path d={path} className="mark__ink-base" />
+        <defs>
+          <linearGradient id={gradientId} x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stopColor="var(--turquoise)" stopOpacity="0.16" />
+            <stop offset="18%" stopColor="var(--turquoise)" stopOpacity="0.5" />
+            <stop offset="55%" stopColor="var(--turquoise)" stopOpacity="0.38" />
+            <stop offset="85%" stopColor="var(--turquoise)" stopOpacity="0.5" />
+            <stop offset="100%" stopColor="var(--turquoise)" stopOpacity="0.14" />
+          </linearGradient>
+        </defs>
+        <path d={path} fill={`url(#${gradientId})`} />
         <path d={path} className="mark__ink-pass" transform="translate(-3,3) scale(0.985)" />
       </motion.svg>
       <span className="mark__text">{children}</span>

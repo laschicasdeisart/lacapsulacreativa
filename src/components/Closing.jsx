@@ -13,11 +13,9 @@ export default function Closing() {
         <Sparkle className="closing__deco closing__deco--sparkle" />
       </div>
       <div className="container closing__inner">
-        <Reveal tag="h2" className="closing__title">
+        <Reveal tag="h2" className="closing__title" pop y={44}>
           Este septiembre no te prometas lo que sabes que{" "}
-          <Marker color="yellow" delay={0.4}>
-            no conseguirás sol@
-          </Marker>
+          <Marker delay={0.5}>no conseguirás sol@</Marker>
           .
         </Reveal>
         <Reveal tag="p" className="closing__sub" delay={0.15}>

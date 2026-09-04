@@ -16,11 +16,9 @@ export default function Offer() {
         <Reveal tag="span" className="section-kicker">
           La oferta
         </Reveal>
-        <Reveal tag="h2" className="offer__title" delay={0.05}>
+        <Reveal tag="h2" className="offer__title" delay={0.05} pop y={40}>
           Este septiembre, al entrar en La Cápsula, te llevas{" "}
-          <Marker color="turquoise" delay={0.5}>
-            Flowly de regalo
-          </Marker>
+          <Marker delay={0.5}>Flowly de regalo</Marker>
         </Reveal>
 
         <div className="offer__table">
@@ -34,18 +32,18 @@ export default function Offer() {
           ))}
         </div>
 
-        <Reveal tag="p" className="offer__rule" delay={0.3}>
-          Mientras te mantengas activo en La Cápsula, Flowly es tuyo sin coste. Es
-          así de simple.
-        </Reveal>
-
-        <Reveal tag="div" className="offer__note" delay={0.35}>
+        <Reveal tag="div" className="offer__note" delay={0.3}>
           <Star className="offer__note-star" color="var(--yellow)" />
           <p>
             Esto no es un truco de embudo. Es nuestra forma de que pruebes Flowly
             durante el tiempo suficiente para que tomes el control del contenido en
             tu negocio — como nos pasó a nosotras.
           </p>
+        </Reveal>
+
+        <Reveal tag="p" className="offer__rule offer__rule--small" delay={0.4}>
+          Mientras te mantengas activo en La Cápsula, Flowly es tuyo sin coste. Es
+          así de simple.
         </Reveal>
       </div>
     </Slide>
