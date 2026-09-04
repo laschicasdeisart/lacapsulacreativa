@@ -4,11 +4,6 @@ import Marker from "./Marker";
 import { Star } from "./Doodles";
 import { SLIDES } from "../constants";
 
-const plans = [
-  { name: "Standard", gift: "6 meses gratis", badge: "🎓" },
-  { name: "Premium", gift: "1 año gratis", badge: "👑" },
-];
-
 export default function Offer() {
   return (
     <Slide index={SLIDES.OFFER} alt className="offer">
@@ -21,18 +16,7 @@ export default function Offer() {
           <Marker delay={0.5}>Flowly de regalo</Marker>
         </Reveal>
 
-        <div className="offer__table">
-          {plans.map((plan, i) => (
-            <Reveal tag="div" className="offer-row" key={plan.name} delay={0.15 + i * 0.1}>
-              <span className="offer-row__badge">{plan.badge}</span>
-              <span className="offer-row__plan">Plan {plan.name}</span>
-              <span className="offer-row__arrow">→</span>
-              <span className="offer-row__gift">Flowly: {plan.gift}</span>
-            </Reveal>
-          ))}
-        </div>
-
-        <Reveal tag="div" className="offer__note" delay={0.3}>
+        <Reveal tag="div" className="offer__note" delay={0.2}>
           <Star className="offer__note-star" color="var(--yellow)" />
           <p>
             Esto no es un truco de embudo. Es nuestra forma de que pruebes Flowly
@@ -41,7 +25,7 @@ export default function Offer() {
           </p>
         </Reveal>
 
-        <Reveal tag="p" className="offer__rule offer__rule--small" delay={0.4}>
+        <Reveal tag="p" className="offer__rule offer__rule--small" delay={0.3}>
           Mientras te mantengas activo en La Cápsula, Flowly es tuyo sin coste. Es
           así de simple.
         </Reveal>

@@ -3,7 +3,8 @@ import Reveal from "./Reveal";
 import Cta from "./Cta";
 import Marker from "./Marker";
 import { Sparkle } from "./Doodles";
-import { SKOOL_URL, SLIDES } from "../constants";
+import { GradCapIcon, FolderIcon, RocketIcon } from "./GlossyIcons";
+import { SKOOL_ABOUT_URL, FLOWLY_DEMO_URL, SLIDES } from "../constants";
 
 export default function Combo() {
   return (
@@ -25,13 +26,13 @@ export default function Combo() {
             rotate={-1.5}
             whileHover={{ rotate: 0, y: -4 }}
           >
-            <span className="combo-card__icon">🎓</span>
+            <GradCapIcon className="combo-card__icon" />
             <h3>La Cápsula Creativa</h3>
             <p>
               Estrategia, guiones, comunidad y clases en vivo — todo lo que necesitas
               para saber qué crear, cómo y por qué.
             </p>
-            <Cta href={SKOOL_URL} variant="ghost" className="combo-card__cta">
+            <Cta href={SKOOL_ABOUT_URL} variant="ghost" className="combo-card__cta">
               ¿Qué es la Cápsula Creativa?
             </Cta>
           </Reveal>
@@ -44,13 +45,16 @@ export default function Combo() {
             rotate={1.5}
             whileHover={{ rotate: 0, y: -4 }}
           >
-            <span className="combo-card__icon">🗂️</span>
+            <FolderIcon className="combo-card__icon" />
             <h3>Flowly</h3>
             <p>
               La herramienta que pone orden en todo el proceso: ideas, contenidos,
               calendario, lanzamientos, equipo. Flowly es el cómo ejecutas todo lo
               que aprendes en la Cápsula, sin perderlo por el camino.
             </p>
+            <Cta href={FLOWLY_DEMO_URL} variant="ghost" className="combo-card__cta">
+              Descubre Flowly a fondo
+            </Cta>
           </Reveal>
         </div>
 
@@ -62,7 +66,7 @@ export default function Combo() {
           whileHover={{ y: -4 }}
         >
           <Sparkle className="combo-card__sparkle" />
-          <span className="combo-card__icon">🚀</span>
+          <RocketIcon className="combo-card__icon" />
           <h3>Y el Propulsor</h3>
           <p>
             Es una app con la que generas guiones, secuencias de stories y ofertas

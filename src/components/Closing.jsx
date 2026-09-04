@@ -31,7 +31,7 @@ export default function Closing() {
 
       <footer className="closing__footer">
         <span>La Cápsula Creativa</span>
-        <span>✦</span>
+        <Star className="closing__footer-star" color="var(--yellow)" />
         <span>Septiembre 2025</span>
       </footer>
     </Slide>

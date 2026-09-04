@@ -2,6 +2,7 @@ import Slide from "./Slide";
 import Reveal from "./Reveal";
 import Cta from "./Cta";
 import Marker from "./Marker";
+import { GiftIcon } from "./GlossyIcons";
 import { SKOOL_URL, SLIDES } from "../constants";
 
 const blocks = [
@@ -44,28 +45,20 @@ export default function Numbers() {
                 <span className="number-card__gift">{b.gift}</span>
               </div>
               <span className="number-card__savings">
-                TE AHORRAS {b.saved} <span className="number-card__savings-emoji">🎁</span>
+                TE AHORRAS {b.saved} <GiftIcon className="number-card__savings-emoji" />
               </span>
             </Reveal>
           ))}
         </div>
 
-        <Reveal tag="p" className="numbers__bridge" delay={0.3}>
-          Y todavía no hemos hablado de{" "}
-          <Marker delay={0.6}>El Propulsor</Marker>
-          . Hasta ahora ha sido una herramienta exclusiva para quienes están dentro de
-          La Cápsula. Muy pronto va a salir a la venta por separado, con suscripción
-          mensual. Ahora mismo, sigue incluido sin coste extra.
-        </Reveal>
-
-        <Reveal tag="p" className="numbers__urgency" delay={0.35}>
+        <Reveal tag="p" className="numbers__urgency" delay={0.3}>
           Este mes de septiembre, no entrar en la cápsula te cuesta dinero…
         </Reveal>
 
-        <Reveal tag="p" className="numbers__hype" delay={0.4}>
+        <Reveal tag="p" className="numbers__hype" delay={0.35}>
           Venga! que estamos en el mes de{" "}
-          <Marker delay={0.7}>"Esta vez sí que sí"</Marker>
-          … Aprovéchalo — esta oferta se cierra el <strong>30 de septiembre</strong>{" "}
+          <Marker delay={0.6}>"Esta vez sí que sí"</Marker>
+          … Aprovéchalo, esta oferta se cierra el <strong>30 de septiembre</strong>{" "}
           para siempre.
         </Reveal>
 

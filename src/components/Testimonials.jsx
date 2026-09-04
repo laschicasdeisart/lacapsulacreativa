@@ -2,10 +2,26 @@ import Slide from "./Slide";
 import Reveal from "./Reveal";
 import { SLIDES } from "../constants";
 
-const slots = [
-  { tag: "Miembro de La Cápsula", rotate: -3 },
-  { tag: "Usuario de Flowly", rotate: 2 },
-  { tag: "Miembro de La Cápsula", rotate: -1.5 },
+const testimonials = [
+  {
+    quote:
+      "Me he quedado muerta con el generador de ideas. Dándole solo mi nicho me ha sacado 60 ideas, a cual mejor, y lo más flipante es que no suena ni de lejos a IA.",
+    name: "Cristina M.",
+    role: "Usuario de El Propulsor",
+    rotate: -3,
+  },
+  {
+    quote: "Tengo clarísimo que esto va a ser un antes y un después en mi contenido.",
+    role: "Miembro de La Cápsula",
+    rotate: 2,
+  },
+  {
+    quote:
+      "En ningún sitio vais a recibir tanto por tan poco. Toda la ayuda, toda la facilidad en los procesos y todo el aprendizaje que ofrecen Irene y María.",
+    name: "Cristina M.",
+    role: "Miembro de La Cápsula",
+    rotate: -1.5,
+  },
 ];
 
 export default function Testimonials() {
@@ -20,28 +36,27 @@ export default function Testimonials() {
         </Reveal>
 
         <div className="testimonials__grid">
-          {slots.map((slot, i) => (
+          {testimonials.map((t, i) => (
             <Reveal
               tag="figure"
               className="testimonial-card"
               key={i}
               delay={0.18 + i * 0.12}
               pop
-              rotate={slot.rotate}
+              rotate={t.rotate}
               whileHover={{ rotate: 0, y: -4 }}
             >
               <span className="testimonial-card__quote">"</span>
-              <p className="testimonial-card__placeholder">
-                Testimonio pendiente de añadir — aquí irá la experiencia real de
-                un{slot.tag.startsWith("U") ? "" : "a"} {slot.tag.toLowerCase()}.
-              </p>
-              <figcaption>{slot.tag}</figcaption>
+              <p className="testimonial-card__quote-text">{t.quote}</p>
+              <figcaption>
+                {t.name && <span className="testimonial-card__name">{t.name}</span>}
+                <span className="testimonial-card__role">{t.role}</span>
+              </figcaption>
             </Reveal>
           ))}
         </div>
         <Reveal tag="p" className="testimonials__note" delay={0.4}>
-          Espacio reservado — se irán añadiendo testimonios reales a medida que
-          entren.
+          Y esto es solo el principio — cada semana se suman más testimonios.
         </Reveal>
       </div>
     </Slide>
