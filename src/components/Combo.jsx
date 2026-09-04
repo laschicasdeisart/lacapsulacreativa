@@ -1,32 +1,29 @@
-import { motion } from "framer-motion";
+import Slide from "./Slide";
+import Reveal from "./Reveal";
 import Cta from "./Cta";
 import Marker from "./Marker";
 import { Sparkle } from "./Doodles";
-import { SKOOL_URL } from "../constants";
-
-const fadeUp = (delay = 0) => ({
-  initial: { opacity: 0, y: 34 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, amount: 0.3 },
-  transition: { duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] },
-});
+import { SKOOL_URL, SLIDES } from "../constants";
 
 export default function Combo() {
   return (
-    <section className="slide slide--auto combo" id="combo">
+    <Slide index={SLIDES.COMBO} className="combo">
       <div className="container">
-        <motion.span className="section-kicker" {...fadeUp(0)}>
+        <Reveal tag="span" className="section-kicker">
           El plan de estudios
-        </motion.span>
-        <motion.h2 className="combo__title" {...fadeUp(0.05)}>
-          El combo <Marker color="yellow">perfecto</Marker>
-        </motion.h2>
-        <motion.p className="combo__formula" {...fadeUp(0.1)}>
+        </Reveal>
+        <Reveal tag="h2" className="combo__title" delay={0.05}>
+          El combo{" "}
+          <Marker color="yellow" delay={0.4}>
+            perfecto
+          </Marker>
+        </Reveal>
+        <Reveal tag="p" className="combo__formula" delay={0.1}>
           La Cápsula Creativa <span>+</span> Flowly <span>+</span> El Propulsor
-        </motion.p>
+        </Reveal>
 
         <div className="combo__grid">
-          <motion.article className="combo-card" {...fadeUp(0.15)}>
+          <Reveal tag="article" className="combo-card" delay={0.15}>
             <span className="combo-card__icon">🎓</span>
             <h3>La Cápsula Creativa</h3>
             <p>
@@ -36,9 +33,9 @@ export default function Combo() {
             <Cta href={SKOOL_URL} variant="ghost" className="combo-card__cta">
               ¿Qué es la Cápsula Creativa?
             </Cta>
-          </motion.article>
+          </Reveal>
 
-          <motion.article className="combo-card" {...fadeUp(0.25)}>
+          <Reveal tag="article" className="combo-card" delay={0.25}>
             <span className="combo-card__icon">🗂️</span>
             <h3>Flowly</h3>
             <p>
@@ -46,15 +43,18 @@ export default function Combo() {
               calendario, lanzamientos, equipo. Flowly es el cómo ejecutas todo lo
               que aprendes en la Cápsula, sin perderlo por el camino.
             </p>
-          </motion.article>
+          </Reveal>
         </div>
 
-        <motion.p className="combo__bridge" {...fadeUp(0.1)}>
-          La Cápsula te enseña a crear. <Marker color="turquoise">Flowly</Marker> es la
-          app desde la que creas y centralizas la gestión de todo tu contenido.
-        </motion.p>
+        <Reveal tag="p" className="combo__bridge" delay={0.1}>
+          La Cápsula te enseña a crear.{" "}
+          <Marker color="turquoise" delay={0.3}>
+            Flowly
+          </Marker>{" "}
+          es la app desde la que creas y centralizas la gestión de todo tu contenido.
+        </Reveal>
 
-        <motion.article className="combo-card combo-card--propulsor" {...fadeUp(0.1)}>
+        <Reveal tag="article" className="combo-card combo-card--propulsor" delay={0.1}>
           <Sparkle className="combo-card__sparkle" />
           <span className="combo-card__icon">🚀</span>
           <h3>Y el Propulsor</h3>
@@ -67,12 +67,12 @@ export default function Combo() {
             Formación + orden + un generador que piensa como nosotras cuando te
             atascas.
           </p>
-        </motion.article>
+        </Reveal>
 
-        <motion.p className="combo__closing" {...fadeUp(0.15)}>
+        <Reveal tag="p" className="combo__closing" delay={0.15}>
           Ese es el combo completo.
-        </motion.p>
+        </Reveal>
       </div>
-    </section>
+    </Slide>
   );
 }

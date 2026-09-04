@@ -10,7 +10,6 @@ export default function Cta({ href, children, variant = "primary", className = "
       target="_blank"
       rel="noopener noreferrer"
       className={`btn ${variant === "ghost" ? "btn--ghost" : ""} ${className}`}
-      data-cursor="link"
       onMouseEnter={hover}
       onClick={click}
       {...rest}

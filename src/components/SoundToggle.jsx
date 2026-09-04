@@ -6,7 +6,6 @@ export default function SoundToggle() {
     <button
       type="button"
       className="sound-toggle"
-      data-cursor="link"
       onClick={toggle}
       aria-pressed={enabled}
       aria-label={enabled ? "Silenciar sonido" : "Activar sonido"}

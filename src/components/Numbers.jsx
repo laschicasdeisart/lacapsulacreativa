@@ -1,14 +1,8 @@
-import { motion } from "framer-motion";
+import Slide from "./Slide";
+import Reveal from "./Reveal";
 import Cta from "./Cta";
 import Marker from "./Marker";
-import { SKOOL_URL } from "../constants";
-
-const fadeUp = (delay = 0) => ({
-  initial: { opacity: 0, y: 30 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, amount: 0.4 },
-  transition: { duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] },
-});
+import { SKOOL_URL, SLIDES } from "../constants";
 
 const blocks = [
   {
@@ -27,48 +21,54 @@ const blocks = [
 
 export default function Numbers() {
   return (
-    <section className="slide slide--auto numbers" id="numeros">
+    <Slide index={SLIDES.NUMBERS} className="numbers">
       <div className="container">
-        <motion.span className="section-kicker" {...fadeUp(0)}>
+        <Reveal tag="span" className="section-kicker">
           Lo que te llevas, en números
-        </motion.span>
+        </Reveal>
 
         <div className="numbers__grid">
           {blocks.map((b, i) => (
-            <motion.div className="number-card" key={b.plan} {...fadeUp(0.1 + i * 0.12)}>
+            <Reveal tag="div" className="number-card" key={b.plan} delay={0.1 + i * 0.12}>
               <span className="number-card__plan">Cápsula {b.plan}</span>
               <span className="number-card__price">{b.price}</span>
               <span className="number-card__gift">{b.gift}</span>
               <span className="number-card__saved">
                 🎁 <strong>{b.saved}</strong> ahorrados
               </span>
-            </motion.div>
+            </Reveal>
           ))}
         </div>
 
-        <motion.p className="numbers__bridge" {...fadeUp(0.3)}>
-          Y todavía no hemos hablado de <Marker color="yellow">El Propulsor</Marker>.
-          Hasta ahora ha sido una herramienta exclusiva para quienes están dentro de
+        <Reveal tag="p" className="numbers__bridge" delay={0.3}>
+          Y todavía no hemos hablado de{" "}
+          <Marker color="yellow" delay={0.6}>
+            El Propulsor
+          </Marker>
+          . Hasta ahora ha sido una herramienta exclusiva para quienes están dentro de
           La Cápsula. Muy pronto va a salir a la venta por separado, con suscripción
           mensual. Ahora mismo, sigue incluido sin coste extra.
-        </motion.p>
+        </Reveal>
 
-        <motion.p className="numbers__urgency" {...fadeUp(0.35)}>
+        <Reveal tag="p" className="numbers__urgency" delay={0.35}>
           Este mes de septiembre, no entrar en la cápsula te cuesta dinero…
-        </motion.p>
+        </Reveal>
 
-        <motion.p className="numbers__hype" {...fadeUp(0.4)}>
+        <Reveal tag="p" className="numbers__hype" delay={0.4}>
           Venga! que estamos en el mes de{" "}
-          <Marker color="turquoise">"Esta vez sí que sí"</Marker>… Aprovéchalo — esta
-          oferta se cierra el <strong>30 de septiembre</strong> para siempre.
-        </motion.p>
+          <Marker color="turquoise" delay={0.7}>
+            "Esta vez sí que sí"
+          </Marker>
+          … Aprovéchalo — esta oferta se cierra el <strong>30 de septiembre</strong>{" "}
+          para siempre.
+        </Reveal>
 
-        <motion.div {...fadeUp(0.45)}>
+        <Reveal tag="div" delay={0.45}>
           <Cta href={SKOOL_URL} className="numbers__cta">
             Quiero el combo perfecto
           </Cta>
-        </motion.div>
+        </Reveal>
       </div>
-    </section>
+    </Slide>
   );
 }

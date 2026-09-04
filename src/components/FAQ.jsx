@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Slide from "./Slide";
+import Reveal from "./Reveal";
 import { useSound } from "../hooks/SoundContext";
+import { SLIDES } from "../constants";
 
 const faqs = [
   {
@@ -41,7 +44,6 @@ function FaqItem({ item, isOpen, onToggle }) {
           onToggle();
         }}
         onMouseEnter={hover}
-        data-cursor="link"
         aria-expanded={isOpen}
       >
         <span>{item.q}</span>
@@ -70,25 +72,14 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="slide slide--auto faq" id="faq">
+    <Slide index={SLIDES.FAQ} className="faq">
       <div className="container">
-        <motion.span
-          className="section-kicker"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-        >
+        <Reveal tag="span" className="section-kicker">
           Antes de que preguntes
-        </motion.span>
-        <motion.h2
-          className="faq__title"
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ delay: 0.05 }}
-        >
+        </Reveal>
+        <Reveal tag="h2" className="faq__title" delay={0.05}>
           Preguntas rápidas
-        </motion.h2>
+        </Reveal>
 
         <div className="faq__list">
           {faqs.map((item, i) => (
@@ -101,6 +92,6 @@ export default function FAQ() {
           ))}
         </div>
       </div>
-    </section>
+    </Slide>
   );
 }

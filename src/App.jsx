@@ -1,6 +1,7 @@
 import { SoundProvider } from "./hooks/SoundContext";
-import Cursor from "./components/Cursor";
-import ScrollProgress from "./components/ScrollProgress";
+import { SlideDeckProvider, useSlideDeck } from "./hooks/SlideDeckContext";
+import { useSound } from "./hooks/SoundContext";
+import Deck from "./components/Deck";
 import SoundToggle from "./components/SoundToggle";
 import Hero from "./components/Hero";
 import Pain from "./components/Pain";
@@ -10,33 +11,43 @@ import Numbers from "./components/Numbers";
 import Testimonials from "./components/Testimonials";
 import FAQ from "./components/FAQ";
 import Closing from "./components/Closing";
+import { TOTAL_SLIDES } from "./constants";
 
 function BrandMark() {
+  const { goTo } = useSlideDeck();
+  const { click } = useSound();
   return (
-    <a href="#hero" className="brand-mark" data-cursor="link">
+    <button
+      type="button"
+      className="brand-mark"
+      onClick={() => {
+        click();
+        goTo(0);
+      }}
+    >
       La Cápsula Creativa
-    </a>
+    </button>
   );
 }
 
 function App() {
   return (
     <SoundProvider>
-      <div className="noise" />
-      <Cursor />
-      <ScrollProgress />
-      <BrandMark />
-      <SoundToggle />
-      <main>
-        <Hero />
-        <Pain />
-        <Combo />
-        <Offer />
-        <Numbers />
-        <Testimonials />
-        <FAQ />
-        <Closing />
-      </main>
+      <SlideDeckProvider total={TOTAL_SLIDES}>
+        <div className="noise" />
+        <BrandMark />
+        <SoundToggle />
+        <Deck>
+          <Hero />
+          <Pain />
+          <Combo />
+          <Offer />
+          <Numbers />
+          <Testimonials />
+          <FAQ />
+          <Closing />
+        </Deck>
+      </SlideDeckProvider>
     </SoundProvider>
   );
 }
