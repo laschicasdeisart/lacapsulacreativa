@@ -2,7 +2,7 @@ import Slide from "./Slide";
 import Reveal from "./Reveal";
 import Cta from "./Cta";
 import Marker from "./Marker";
-import { GiftIcon } from "./GlossyIcons";
+import { GiftIcon } from "./CartoonIcons";
 import { SKOOL_URL, SLIDES } from "../constants";
 
 const blocks = [

@@ -679,9 +679,9 @@ svg {
   width: 2.6rem;
   height: 2.6rem;
 }
-.glossy-icon {
+.cartoon-icon {
   display: inline-block;
-  filter: drop-shadow(0 5px 8px rgba(0, 0, 0, 0.4));
+  filter: drop-shadow(2px 3px 0 rgba(0, 0, 0, 0.45));
 }
 .combo-card h3 {
   font-size: clamp(1.4rem, 2.6vw, 1.9rem);

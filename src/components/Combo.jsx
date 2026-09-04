@@ -3,7 +3,7 @@ import Reveal from "./Reveal";
 import Cta from "./Cta";
 import Marker from "./Marker";
 import { Sparkle } from "./Doodles";
-import { GradCapIcon, FolderIcon, RocketIcon } from "./GlossyIcons";
+import { GradCapIcon, FolderIcon, RocketIcon } from "./CartoonIcons";
 import { SKOOL_ABOUT_URL, FLOWLY_DEMO_URL, SLIDES } from "../constants";
 
 export default function Combo() {
