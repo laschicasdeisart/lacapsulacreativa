@@ -8,6 +8,7 @@ import { SKOOL_URL, SLIDES } from "../constants";
 import { useActiveSlide } from "../hooks/SlideDeckContext";
 
 const titleWords = ["La", "vuelta", "al", "cole", "de", "tu"];
+const chips = ["Ideas", "Guiones", "Calendarios", "Lanzamientos", "Equipo"];
 
 function HeroContent() {
   const isActive = useActiveSlide();
@@ -22,7 +23,7 @@ function HeroContent() {
 
       <div className="container hero__inner">
         <Reveal tag="span" className="eyebrow" y={16}>
-          La vuelta al cole de tu negocio
+          Oferta especial vuelta al cole
         </Reveal>
 
         <h1 className="hero__title">
@@ -53,12 +54,38 @@ function HeroContent() {
           Este septiembre te regalamos la herramienta que necesitas para{" "}
           <Marker delay={0.95}>eliminar por completo el caos</Marker> de crear contenido para
           tu negocio.
-          <br />
-          <span className="hero__chaos">Ideas… guiones… calendarios… lanzamientos… equipo…</span>{" "}
-          <Marker className="hero__todo" delay={1.2}>
-            TODO
-          </Marker>
         </Reveal>
+
+        <div className="hero__chips">
+          {chips.map((c, i) => (
+            <motion.span
+              key={c}
+              className="hero__chip"
+              initial={{ opacity: 0, y: 14, scale: 0.85 }}
+              animate={
+                isActive ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 14, scale: 0.85 }
+              }
+              transition={{ type: "spring", stiffness: 300, damping: 20, delay: 1.0 + i * 0.08 }}
+            >
+              {c}
+            </motion.span>
+          ))}
+          <motion.span
+            className="hero__chip hero__chip--todo"
+            initial={{ opacity: 0, y: 14, scale: 0.8 }}
+            animate={
+              isActive ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 14, scale: 0.8 }
+            }
+            transition={{
+              type: "spring",
+              stiffness: 300,
+              damping: 18,
+              delay: 1.0 + chips.length * 0.08,
+            }}
+          >
+            <Marker delay={0.15}>TODO</Marker>
+          </motion.span>
+        </div>
 
         <Reveal tag="div" className="hero__cta" delay={0.85}>
           <Cta href={SKOOL_URL}>¡Lo necesito ya!</Cta>

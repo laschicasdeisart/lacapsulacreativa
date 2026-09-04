@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Slide from "./Slide";
 import Reveal from "./Reveal";
+import Marker from "./Marker";
 import { useSound } from "../hooks/SoundContext";
 import { SLIDES } from "../constants";
 
@@ -78,7 +79,7 @@ export default function FAQ() {
           Antes de que preguntes
         </Reveal>
         <Reveal tag="h2" className="faq__title" delay={0.05} pop y={40}>
-          Por si te lo estás preguntando…
+          Por si te lo estás <Marker delay={0.4}>preguntando</Marker>…
         </Reveal>
 
         <div className="faq__list">

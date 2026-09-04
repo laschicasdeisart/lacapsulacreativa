@@ -69,10 +69,6 @@ export default function Combo() {
             irresistibles como si tuvieras nuestro cerebro creativo en tus manos.
             Literal.
           </p>
-          <p className="combo-card__tagline">
-            Formación + orden + un generador que piensa como nosotras cuando te
-            atascas.
-          </p>
         </Reveal>
 
         <Reveal tag="p" className="combo__closing" delay={0.15}>

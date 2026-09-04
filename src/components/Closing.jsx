@@ -14,12 +14,11 @@ export default function Closing() {
       </div>
       <div className="container closing__inner">
         <Reveal tag="h2" className="closing__title" pop y={44}>
-          Este septiembre no te prometas lo que sabes que{" "}
-          <Marker delay={0.5}>no conseguirás sol@</Marker>
-          .
+          Este septiembre deja de intentar ser más constante y empieza a serlo de
+          verdad con <Marker delay={0.5}>el combo perfecto</Marker>.
         </Reveal>
         <Reveal tag="p" className="closing__sub" delay={0.15}>
-          Entra en la Cápsula Creativa ahora y llévate el combo perfecto.
+          Entra en la Cápsula AHORA.
         </Reveal>
 
         <Reveal tag="div" delay={0.3}>
