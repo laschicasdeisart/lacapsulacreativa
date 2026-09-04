@@ -22,6 +22,18 @@ const testimonials = [
     role: "Miembro de La Cápsula",
     rotate: -1.5,
   },
+  {
+    quote:
+      "Me parece brutal, porque esto va a ahorrar tiempo y dinero. Qué bien piensa y organiza — y las pruebas que le hice de guiones e historias me han molado.",
+    role: "Usuario de El Propulsor",
+    rotate: 2.5,
+  },
+  {
+    quote:
+      "Poco se habla de la magia del Propulsor… no nos estamos dando cuenta de lo que han creado estas dos mujeres. Gracias, chicas, de corazón.",
+    role: "Miembro de La Cápsula",
+    rotate: -2,
+  },
 ];
 
 export default function Testimonials() {

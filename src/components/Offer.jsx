@@ -19,9 +19,9 @@ export default function Offer() {
         <Reveal tag="div" className="offer__note" delay={0.2}>
           <Star className="offer__note-star" color="var(--yellow)" />
           <p>
-            Esto no es un truco de embudo. Es nuestra forma de que pruebes Flowly
-            durante el tiempo suficiente para que tomes el control del contenido en
-            tu negocio — como nos pasó a nosotras.
+            Es nuestra forma de que pruebes Flowly durante el tiempo suficiente para
+            que tomes el control del contenido en tu negocio — como nos pasó a
+            nosotras.
           </p>
         </Reveal>
 
