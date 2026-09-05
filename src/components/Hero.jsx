@@ -3,7 +3,6 @@ import Slide from "./Slide";
 import Reveal from "./Reveal";
 import Marker from "./Marker";
 import Cta from "./Cta";
-import PriceTag from "./PriceTag";
 import { Star, Sparkle, Ring } from "./Doodles";
 import { SKOOL_URL, SLIDES } from "../constants";
 import { useActiveSlide } from "../hooks/SlideDeckContext";
@@ -89,8 +88,12 @@ function HeroContent() {
         </div>
 
         <Reveal tag="div" className="hero__cta" delay={0.85}>
-          <Cta href={SKOOL_URL}>¡Lo necesito ya!</Cta>
-          <PriceTag />
+          <Cta href={SKOOL_URL} className="hero__main-cta" arrow={false}>
+            <span className="hero__main-cta-label">
+              ¡Lo necesito ya! <span className="btn__arrow" aria-hidden="true">→</span>
+            </span>
+            <span className="hero__main-cta-price">Desde 18,93€/mes (menos de 20€/mes)</span>
+          </Cta>
           <span className="hero__micro">Oferta válida solo en septiembre.</span>
         </Reveal>
       </div>

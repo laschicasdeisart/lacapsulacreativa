@@ -559,10 +559,46 @@ svg {
   gap: 1.2rem;
   flex-wrap: wrap;
 }
+.hero__main-cta {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.3em;
+  white-space: normal;
+}
+.hero__main-cta-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.hero__main-cta-price {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.72rem;
+  color: rgba(6, 6, 7, 0.7);
+  letter-spacing: 0.01em;
+}
 .hero__micro {
   font-size: 0.85rem;
   color: var(--white-dim);
   font-weight: 500;
+}
+@media (max-width: 640px) {
+  .hero__cta {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.9rem;
+  }
+  .hero__main-cta {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+  .hero__main-cta-label {
+    justify-content: center;
+  }
+  .hero__micro {
+    text-align: center;
+  }
 }
 @media (max-height: 920px) {
   .hero .slide-panel__scroll {
