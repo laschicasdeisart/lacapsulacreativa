@@ -97,6 +97,30 @@ export function RocketIcon({ className = "" }) {
   );
 }
 
+// Checklist — pegatina cuadrada con check grueso, para la lista de
+// "esto es para ti si...".
+export function CheckIcon({ className = "" }) {
+  return (
+    <svg viewBox="0 0 44 44" className={`cartoon-icon ${className}`} aria-hidden="true">
+      <path
+        d="M8 6h24l4 6v24l-6 4H10l-6-4V12Z"
+        fill="var(--turquoise)"
+        stroke={INK}
+        strokeWidth="2.4"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M13 22.5l6 6L32 15"
+        fill="none"
+        stroke={INK}
+        strokeWidth="3.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 // Ahorro — regalo con lazo, sencillo y directo.
 export function GiftIcon({ className = "" }) {
   return (

@@ -2,6 +2,7 @@ import Slide from "./Slide";
 import Reveal from "./Reveal";
 import Cta from "./Cta";
 import Marker from "./Marker";
+import PriceTag from "./PriceTag";
 import { Star, Sparkle } from "./Doodles";
 import { SKOOL_URL, SLIDES } from "../constants";
 
@@ -21,10 +22,11 @@ export default function Closing() {
           Entra en la Cápsula AHORA.
         </Reveal>
 
-        <Reveal tag="div" delay={0.3}>
+        <Reveal tag="div" className="closing__cta-block" delay={0.3}>
           <Cta href={SKOOL_URL} className="closing__cta">
             Entrar en La Cápsula
           </Cta>
+          <PriceTag className="closing__price" />
           <p className="closing__micro">Oferta válida hasta el 30 de septiembre.</p>
         </Reveal>
       </div>

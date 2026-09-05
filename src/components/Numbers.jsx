@@ -2,6 +2,7 @@ import Slide from "./Slide";
 import Reveal from "./Reveal";
 import Cta from "./Cta";
 import Marker from "./Marker";
+import PriceTag from "./PriceTag";
 import { GiftIcon } from "./CartoonIcons";
 import { SKOOL_URL, SLIDES } from "../constants";
 
@@ -62,10 +63,11 @@ export default function Numbers() {
           para siempre.
         </Reveal>
 
-        <Reveal tag="div" delay={0.45}>
+        <Reveal tag="div" className="numbers__cta-row" delay={0.45}>
           <Cta href={SKOOL_URL} className="numbers__cta">
             Quiero el combo perfecto
           </Cta>
+          <PriceTag />
         </Reveal>
       </div>
     </Slide>

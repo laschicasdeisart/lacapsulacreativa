@@ -154,7 +154,7 @@ svg {
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: safe center;
   padding: clamp(3.5rem, 7vh, 5.5rem) 0 clamp(7rem, 15vh, 9.5rem);
   position: relative;
 }
@@ -564,6 +564,17 @@ svg {
   color: var(--white-dim);
   font-weight: 500;
 }
+@media (max-height: 920px) {
+  .hero .slide-panel__scroll {
+    padding: clamp(2.2rem, 5vh, 3.5rem) 0 clamp(6rem, 13vh, 8rem);
+  }
+  .hero__inner {
+    gap: clamp(0.9rem, 1.8vw, 1.3rem);
+  }
+  .hero__title {
+    font-size: clamp(2.6rem, 8.5vw, 7rem);
+  }
+}
 /* ---------- pain ---------- */
 .pain__grid {
   display: grid;
@@ -723,6 +734,80 @@ svg {
   color: var(--yellow);
 }
 
+/* ---------- for you ---------- */
+.foryou__title {
+  font-size: clamp(1.8rem, 4.6vw, 3.2rem);
+  line-height: 1.15;
+  max-width: 22ch;
+  margin-bottom: clamp(2.2rem, 5vw, 3.2rem);
+}
+.foryou__list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 2.4vw, 1.4rem);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 62ch;
+}
+.foryou__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1rem;
+  background: var(--black-card);
+  border: 2px solid var(--white-faint);
+  border-radius: var(--radius-md);
+  padding: clamp(1.1rem, 2.4vw, 1.5rem) clamp(1.3rem, 3vw, 1.8rem);
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+.foryou__item:hover {
+  border-color: var(--turquoise);
+}
+.foryou__item-icon {
+  width: 2.2rem;
+  height: 2.2rem;
+  flex: none;
+  margin-top: 0.15rem;
+}
+.foryou__item p {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1rem, 1.9vw, 1.25rem);
+  line-height: 1.45;
+  color: var(--white);
+  margin: 0;
+}
+
+/* ---------- price tag ---------- */
+.price-tag {
+  display: inline-flex;
+  align-items: center;
+  background: var(--black-card);
+  border: 2px solid var(--yellow);
+  border-radius: 100px;
+  padding: 0.55em 1em;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 1.3;
+  color: var(--yellow);
+  white-space: nowrap;
+  transform: rotate(-2deg);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.4);
+}
+.price-tag em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--white-dim);
+  margin-left: 0.4em;
+}
+@media (max-width: 640px) {
+  .price-tag {
+    white-space: normal;
+    text-align: center;
+  }
+}
+
 /* ---------- offer ---------- */
 .offer__title {
   font-size: clamp(2rem, 5vw, 3.6rem);
@@ -833,6 +918,48 @@ svg {
   max-width: 56ch;
   font-size: clamp(1.05rem, 2vw, 1.25rem);
   margin-bottom: clamp(1.8rem, 4vw, 2.4rem);
+}
+@media (max-height: 920px) {
+  .numbers .slide-panel__scroll {
+    padding: clamp(2.2rem, 5vh, 3.5rem) 0 clamp(6rem, 13vh, 8rem);
+  }
+  .numbers__grid {
+    gap: clamp(0.7rem, 1.8vw, 1rem);
+    margin: clamp(1.2rem, 3vw, 1.6rem) 0 clamp(1.6rem, 3.5vw, 2rem);
+  }
+  .number-card {
+    padding: clamp(1rem, 2.2vw, 1.5rem) clamp(1.3rem, 3vw, 2rem);
+  }
+  .numbers__hype {
+    margin-bottom: clamp(1rem, 2.5vw, 1.4rem);
+  }
+}
+@media (max-width: 480px) {
+  .numbers__grid {
+    gap: 0.6rem;
+    margin: 1rem 0 1.2rem;
+  }
+  .number-card {
+    padding: 1rem 1.2rem;
+  }
+  .numbers__urgency {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  .numbers__hype {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+  .price-tag {
+    font-size: 0.68rem;
+    padding: 0.45em 0.8em;
+  }
+}
+.numbers__cta-row {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
 }
 
 /* ---------- testimonials ---------- */
@@ -1006,8 +1133,13 @@ svg {
   font-size: clamp(1.1rem, 2vw, 1.35rem);
   padding: 1.1em 2.2em;
 }
+.closing__cta-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
 .closing__micro {
-  margin-top: 1rem;
   font-size: 0.85rem;
   color: var(--white-dim);
 }

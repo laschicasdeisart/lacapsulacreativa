@@ -7,10 +7,11 @@ export const SLIDES = {
   HERO: 0,
   PAIN: 1,
   COMBO: 2,
-  OFFER: 3,
-  NUMBERS: 4,
-  TESTIMONIALS: 5,
-  FAQ: 6,
-  CLOSING: 7,
+  FORYOU: 3,
+  OFFER: 4,
+  NUMBERS: 5,
+  TESTIMONIALS: 6,
+  FAQ: 7,
+  CLOSING: 8,
 };
 export const TOTAL_SLIDES = Object.keys(SLIDES).length;

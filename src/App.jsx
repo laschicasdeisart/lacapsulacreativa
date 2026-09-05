@@ -5,6 +5,7 @@ import SoundToggle from "./components/SoundToggle";
 import Hero from "./components/Hero";
 import Pain from "./components/Pain";
 import Combo from "./components/Combo";
+import ForYou from "./components/ForYou";
 import Offer from "./components/Offer";
 import Numbers from "./components/Numbers";
 import Testimonials from "./components/Testimonials";
@@ -22,6 +23,7 @@ function App() {
           <Hero />
           <Pain />
           <Combo />
+          <ForYou />
           <Offer />
           <Numbers />
           <Testimonials />
