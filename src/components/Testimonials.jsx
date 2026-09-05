@@ -6,7 +6,6 @@ const testimonials = [
   {
     quote:
       "Me he quedado muerta con el generador de ideas. Dándole solo mi nicho me ha sacado 60 ideas, a cual mejor, y lo más flipante es que no suena ni de lejos a IA.",
-    name: "Cristina M.",
     role: "Usuario de El Propulsor",
     rotate: -3,
   },
@@ -18,7 +17,6 @@ const testimonials = [
   {
     quote:
       "En ningún sitio vais a recibir tanto por tan poco. Toda la ayuda, toda la facilidad en los procesos y todo el aprendizaje que ofrecen Irene y María.",
-    name: "Cristina M.",
     role: "Miembro de La Cápsula",
     rotate: -1.5,
   },
@@ -61,7 +59,6 @@ export default function Testimonials() {
               <span className="testimonial-card__quote">"</span>
               <p className="testimonial-card__quote-text">{t.quote}</p>
               <figcaption>
-                {t.name && <span className="testimonial-card__name">{t.name}</span>}
                 <span className="testimonial-card__role">{t.role}</span>
               </figcaption>
             </Reveal>

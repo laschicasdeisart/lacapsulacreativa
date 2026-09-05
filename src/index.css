@@ -882,12 +882,6 @@ svg {
   flex-direction: column;
   gap: 0.15rem;
 }
-.testimonial-card__name {
-  font-weight: 700;
-  font-size: 0.9rem;
-  color: var(--white);
-  font-style: normal;
-}
 .testimonial-card__role {
   font-weight: 600;
   font-size: 0.78rem;
@@ -1036,43 +1030,11 @@ svg {
   height: 0.9rem;
 }
 
-/* ---------- brand mark ---------- */
-.brand-mark {
-  position: fixed;
-  top: 1.5rem;
-  left: 1.5rem;
-  z-index: 60;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1rem;
-  color: var(--white);
-  text-decoration: none;
-  padding: 0.5em 1em;
-  border: 2px solid transparent;
-  border-radius: 100px;
-  cursor: pointer;
-  transition: border-color 0.2s ease, transform 0.2s ease;
-}
-.brand-mark:hover {
-  border-color: var(--yellow);
-  transform: translateY(-2px);
-}
-@media (max-width: 640px) {
-  .brand-mark {
-    font-size: 0.8rem;
-    padding: 0.4em 0.8em;
-  }
-}
-
 /* decorative props get in the way on small screens */
 @media (max-width: 640px) {
   .hero__deco,
   .closing__deco {
     display: none;
-  }
-  .brand-mark {
-    top: 1rem;
-    left: 1rem;
   }
   .sound-toggle {
     top: 1rem;
