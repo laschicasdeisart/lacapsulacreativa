@@ -10,13 +10,13 @@ const blocks = [
   {
     plan: "Estándar",
     price: "22$/mes",
-    gift: "Flowly gratis 6 meses",
+    gift: "Flowly + El Propulsor gratis 6 meses",
     saved: "114€",
   },
   {
     plan: "Premium",
     price: "47$/mes",
-    gift: "Flowly gratis 12 meses",
+    gift: "Flowly + El Propulsor gratis 12 meses",
     saved: "228€",
   },
 ];
@@ -26,7 +26,12 @@ export default function Numbers() {
     <Slide index={SLIDES.NUMBERS} className="numbers">
       <div className="container">
         <Reveal tag="span" className="section-kicker">
-          Lo que te llevas, en números
+          Esto es lo que pagas por entrar
+        </Reveal>
+
+        <Reveal tag="p" className="numbers__intro" delay={0.05}>
+          Así de simple: esto es lo que pagas cada mes por estar dentro de La Cápsula. Y este
+          septiembre, además, te llevas Flowly y El Propulsor totalmente gratis.
         </Reveal>
 
         <div className="numbers__grid">
@@ -64,8 +69,8 @@ export default function Numbers() {
         </Reveal>
 
         <Reveal tag="p" className="numbers__warning" delay={0.4}>
-          A partir de octubre, el precio de entrada en La Cápsula sube — y cerramos las puertas
-          a nuevos miembros. No sabemos hasta cuándo.
+          A partir del 30 de septiembre, cerramos las puertas a nuevos miembros. No sabemos
+          hasta cuándo.
         </Reveal>
 
         <Reveal tag="div" className="numbers__cta-row" delay={0.45}>

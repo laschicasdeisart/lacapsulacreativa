@@ -1,8 +1,9 @@
 import Slide from "./Slide";
 import Reveal from "./Reveal";
+import Cta from "./Cta";
 import Marker from "./Marker";
 import { Star } from "./Doodles";
-import { SLIDES } from "../constants";
+import { FLOWLY_DEMO_URL, SLIDES } from "../constants";
 
 export default function Offer() {
   return (
@@ -14,6 +15,17 @@ export default function Offer() {
         <Reveal tag="h2" className="offer__title" delay={0.05} pop y={40}>
           Este septiembre, al entrar en La Cápsula, te llevas{" "}
           <Marker delay={0.5}>Flowly de regalo</Marker>
+        </Reveal>
+
+        <Reveal tag="div" delay={0.1}>
+          <Cta
+            href={FLOWLY_DEMO_URL}
+            variant="ghost"
+            arrow={false}
+            className="offer__demo-cta"
+          >
+            ¿No sabes qué es Flowly?
+          </Cta>
         </Reveal>
 
         <Reveal tag="div" className="offer__note" delay={0.2}>

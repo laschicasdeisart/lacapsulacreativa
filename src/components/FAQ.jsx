@@ -33,7 +33,7 @@ const faqs = [
   },
   {
     q: "¿Qué pasa si no entro ahora, en septiembre?",
-    a: "El 30 de septiembre el precio de entrada en La Cápsula sube, y cerramos las puertas a nuevos miembros. No sabemos cuándo — ni si — volveremos a abrirlas.",
+    a: "El 30 de septiembre cerramos las puertas de La Cápsula a nuevos miembros. No sabemos cuándo — ni si — volveremos a abrirlas.",
   },
 ];
 

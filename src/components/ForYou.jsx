@@ -70,8 +70,8 @@ export default function ForYou() {
         <Reveal tag="div" className="foryou__urgency" delay={0.3}>
           <p>
             Esta oferta es solo para probar la novedad de Flowly dentro de la Cápsula, y solo
-            existe este septiembre. Después del 30: el precio de entrada en La Cápsula sube, y
-            cerramos las puertas a nuevos miembros — no sabemos hasta cuándo.
+            existe este septiembre. Después del 30, cerramos las puertas a nuevos miembros —
+            no sabemos hasta cuándo.
           </p>
         </Reveal>
       </div>

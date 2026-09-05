@@ -29,8 +29,8 @@ export default function Closing() {
           <PriceTag className="closing__price" />
           <p className="closing__micro">Oferta válida hasta el 30 de septiembre.</p>
           <p className="closing__warning">
-            A partir de octubre sube el precio y cerramos las puertas de La Cápsula — no
-            sabemos hasta cuándo.
+            A partir del 30 de septiembre cerramos las puertas de La Cápsula — no sabemos
+            hasta cuándo.
           </p>
         </Reveal>
       </div>
