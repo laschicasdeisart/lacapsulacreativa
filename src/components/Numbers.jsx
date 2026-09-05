@@ -63,6 +63,11 @@ export default function Numbers() {
           para siempre.
         </Reveal>
 
+        <Reveal tag="p" className="numbers__warning" delay={0.4}>
+          A partir de octubre, el precio de entrada en La Cápsula sube — y cerramos las puertas
+          a nuevos miembros. No sabemos hasta cuándo.
+        </Reveal>
+
         <Reveal tag="div" className="numbers__cta-row" delay={0.45}>
           <Cta href={SKOOL_URL} className="numbers__cta">
             Quiero el combo perfecto

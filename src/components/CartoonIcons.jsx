@@ -121,6 +121,31 @@ export function CheckIcon({ className = "" }) {
   );
 }
 
+// Descarte — pegatina apagada con una X, para la lista de "esto no
+// es para ti si...". Mismo lenguaje que CheckIcon pero en gris, para
+// que se lea como "no aplica" sin salirse de la paleta de la web.
+export function CrossIcon({ className = "" }) {
+  return (
+    <svg viewBox="0 0 44 44" className={`cartoon-icon ${className}`} aria-hidden="true">
+      <path
+        d="M8 6h24l4 6v24l-6 4H10l-6-4V12Z"
+        fill="var(--black-card)"
+        stroke="var(--white-faint)"
+        strokeWidth="2.4"
+        strokeLinejoin="round"
+        strokeDasharray="4 3"
+      />
+      <path
+        d="M15 15l14 14M29 15l-14 14"
+        fill="none"
+        stroke="var(--white-dim)"
+        strokeWidth="3.2"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
 // Ahorro — regalo con lazo, sencillo y directo.
 export function GiftIcon({ className = "" }) {
   return (

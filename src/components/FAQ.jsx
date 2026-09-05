@@ -31,6 +31,10 @@ const faqs = [
     q: "¿Esta oferta se repite en otro momento del año?",
     a: "No. Esta es una oferta única para dar a conocer Flowly entre nuestra comunidad más cercana. Una vez termine septiembre, no vuelve a repetirse — ni en septiembre del año que viene, ni en ningún otro momento.",
   },
+  {
+    q: "¿Qué pasa si no entro ahora, en septiembre?",
+    a: "El 30 de septiembre el precio de entrada en La Cápsula sube, y cerramos las puertas a nuevos miembros. No sabemos cuándo — ni si — volveremos a abrirlas.",
+  },
 ];
 
 function FaqItem({ item, isOpen, onToggle }) {
