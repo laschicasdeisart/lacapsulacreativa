@@ -55,6 +55,15 @@ body {
   overscroll-behavior: none;
 }
 
+/* La versión ads (scroll continuo) necesita que la página scrollee de
+   verdad, en vez del overflow:hidden del carrusel. */
+html.is-scroll-page,
+body.is-scroll-page {
+  height: auto;
+  overflow: auto;
+  overscroll-behavior: auto;
+}
+
 html {
   background: var(--black);
 }
@@ -160,6 +169,29 @@ svg {
 }
 .slide-panel[aria-hidden="true"] {
   pointer-events: none;
+}
+
+/* ---------- scroll deck (landing ads, sin slider) ---------- */
+.deck--scroll {
+  position: static;
+  inset: auto;
+  overflow: visible;
+}
+.deck__track--scroll {
+  display: block;
+  height: auto;
+  width: 100%;
+  transform: none !important;
+  transition: none;
+}
+.slide-panel--scroll {
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  overflow: visible;
+}
+.slide-panel--scroll .slide-panel__scroll {
+  min-height: 100vh;
 }
 
 .eyebrow {
@@ -883,6 +915,37 @@ svg {
   }
 }
 
+/* ---------- countdown ---------- */
+.countdown {
+  display: inline-flex;
+  gap: 0.5em;
+}
+.countdown__unit {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.25em;
+  background: var(--black-card);
+  border: 2px solid var(--turquoise);
+  border-radius: var(--radius-sm);
+  padding: 0.4em 0.65em;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--white-dim);
+}
+.countdown__unit strong {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--white);
+}
+.countdown--closed {
+  color: var(--white-dim);
+  font-size: 0.9rem;
+}
+.numbers__countdown {
+  margin-bottom: clamp(1.2rem, 2.6vw, 1.6rem);
+}
+
 /* ---------- offer ---------- */
 .offer__title {
   font-size: clamp(2rem, 5vw, 3.6rem);
@@ -932,6 +995,21 @@ svg {
   line-height: 1.5;
   margin-bottom: clamp(1.4rem, 3vw, 2rem);
 }
+.numbers__anchor {
+  max-width: 56ch;
+  font-size: clamp(0.9rem, 1.6vw, 1.05rem);
+  color: var(--white-dim);
+  line-height: 1.5;
+  margin: -0.8rem 0 clamp(1.4rem, 3vw, 2rem);
+}
+.numbers__note {
+  max-width: 56ch;
+  font-size: 0.85rem;
+  color: var(--white-dim);
+  opacity: 0.75;
+  line-height: 1.5;
+  margin: -1.2rem 0 clamp(1.2rem, 2.6vw, 1.6rem);
+}
 .numbers__grid {
   display: flex;
   flex-direction: column;
@@ -971,11 +1049,26 @@ svg {
   font-size: clamp(1.8rem, 4vw, 2.4rem);
   font-weight: 700;
 }
+.number-card__price-usd {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: var(--white-dim);
+  opacity: 0.75;
+}
 .number-card__gift {
   font-family: var(--font-display);
   font-weight: 700;
   font-size: clamp(1.05rem, 2.2vw, 1.35rem);
   color: var(--white);
+}
+.number-card__extra {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.85rem;
+  color: var(--white-dim);
+  max-width: 42ch;
+  line-height: 1.5;
+  margin-top: 0.2rem;
 }
 .number-card__savings {
   display: flex;
@@ -1270,6 +1363,10 @@ svg {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+}
+.closing__countdown {
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .closing__micro {
   font-size: 0.85rem;

@@ -3,6 +3,7 @@ import Reveal from "./Reveal";
 import Cta from "./Cta";
 import Marker from "./Marker";
 import PriceTag from "./PriceTag";
+import Countdown from "./Countdown";
 import { Star, Sparkle } from "./Doodles";
 import { SKOOL_URL, SLIDES } from "../constants";
 
@@ -27,6 +28,7 @@ export default function Closing() {
             Entrar en La Cápsula
           </Cta>
           <PriceTag className="closing__price" />
+          <Countdown className="closing__countdown" />
           <p className="closing__micro">Oferta válida hasta el 30 de septiembre.</p>
           <p className="closing__warning">
             A partir del 30 de septiembre cerramos las puertas de La Cápsula — no sabemos

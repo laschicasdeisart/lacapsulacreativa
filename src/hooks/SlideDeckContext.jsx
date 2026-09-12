@@ -41,6 +41,13 @@ export function useSlideDeck() {
   return ctx;
 }
 
+// Variante que no lanza error fuera de un SlideDeckProvider: la usa Slide
+// para saber si está en modo carrusel (contexto presente) o en modo scroll
+// continuo (contexto ausente, como en la landing de ads).
+export function useSlideDeckSafe() {
+  return useContext(SlideDeckContext);
+}
+
 export function useActiveSlide() {
   return useContext(ActiveSlideContext);
 }
