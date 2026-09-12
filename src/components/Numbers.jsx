@@ -3,21 +3,26 @@ import Reveal from "./Reveal";
 import Cta from "./Cta";
 import Marker from "./Marker";
 import PriceTag from "./PriceTag";
+import Countdown from "./Countdown";
 import { GiftIcon } from "./CartoonIcons";
-import { SKOOL_URL, SLIDES } from "../constants";
+import { SKOOL_URL, SLIDES, PRICING, FLOWLY_PRICE_EUR_MONTHLY } from "../constants";
 
 const blocks = [
   {
-    plan: "Estándar",
-    price: "22$/mes",
+    plan: PRICING.standard.label,
+    priceEur: `${PRICING.standard.eurMonthlyApprox}€/mes aprox.`,
+    priceUsd: `$${PRICING.standard.usdMonthly}/mes o $${PRICING.standard.usdYearly}/año`,
     gift: "Flowly + El Propulsor gratis 6 meses",
-    saved: "114€",
+    saved: `${PRICING.standard.savedEur}€`,
   },
   {
-    plan: "Premium",
-    price: "47$/mes",
+    plan: PRICING.premium.label,
+    priceEur: `${PRICING.premium.eurMonthlyApprox}€/mes aprox.`,
+    priceUsd: `$${PRICING.premium.usdMonthly}/mes o $${PRICING.premium.usdYearly}/año`,
     gift: "Flowly + El Propulsor gratis 12 meses",
-    saved: "228€",
+    saved: `${PRICING.premium.savedEur}€`,
+    extra:
+      "Incluye todo lo de Estándar, y además: 1 sesión 1:1 de dirección (pago anual), Classroom completo por módulos, sesión en directo mensual y retos de Propulsión.",
   },
 ];
 
@@ -34,6 +39,12 @@ export default function Numbers() {
           septiembre, además, te llevas Flowly y El Propulsor totalmente gratis.
         </Reveal>
 
+        <Reveal tag="p" className="numbers__anchor" delay={0.08}>
+          Flowly cuesta {FLOWLY_PRICE_EUR_MONTHLY}€/mes por separado. 6 meses gratis ={" "}
+          {PRICING.standard.savedEur}€ que no pagas. 12 meses gratis ={" "}
+          {PRICING.premium.savedEur}€ que no pagas.
+        </Reveal>
+
         <div className="numbers__grid">
           {blocks.map((b, i) => (
             <Reveal
@@ -47,8 +58,10 @@ export default function Numbers() {
             >
               <div className="number-card__info">
                 <span className="number-card__plan">Tripulante {b.plan}</span>
-                <span className="number-card__price">{b.price}</span>
+                <span className="number-card__price">{b.priceEur}</span>
+                <span className="number-card__price-usd">Cobro real en USD: {b.priceUsd}</span>
                 <span className="number-card__gift">{b.gift}</span>
+                {b.extra && <p className="number-card__extra">{b.extra}</p>}
               </div>
               <span className="number-card__savings">
                 TE AHORRAS {b.saved} <GiftIcon className="number-card__savings-emoji" />
@@ -56,6 +69,15 @@ export default function Numbers() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal tag="p" className="numbers__note" delay={0.22}>
+          Los planes se cobran en dólares a través de Skool. Aquí te los mostramos en euros
+          aproximados al cambio actual, para que compares fácil.
+        </Reveal>
+
+        <Reveal tag="div" delay={0.26}>
+          <Countdown className="numbers__countdown" />
+        </Reveal>
 
         <Reveal tag="p" className="numbers__urgency" delay={0.3}>
           Este mes de septiembre, no entrar en la cápsula te cuesta dinero…

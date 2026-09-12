@@ -4,7 +4,7 @@ import Reveal from "./Reveal";
 import Marker from "./Marker";
 import Cta from "./Cta";
 import { Star, Sparkle, Ring } from "./Doodles";
-import { SKOOL_URL, SLIDES } from "../constants";
+import { SKOOL_URL, SLIDES, PRICING } from "../constants";
 import { useActiveSlide } from "../hooks/SlideDeckContext";
 
 const titleWords = ["La", "vuelta", "al", "cole", "de", "tu"];
@@ -92,9 +92,14 @@ function HeroContent() {
             <span className="hero__main-cta-label">
               ¡Lo necesito ya! <span className="btn__arrow" aria-hidden="true">→</span>
             </span>
-            <span className="hero__main-cta-price">Desde 18,93€/mes (menos de 20€/mes)</span>
+            <span className="hero__main-cta-price">
+              Desde {PRICING.standard.eurMonthlyApprox}€/mes aprox. (menos de 20€/mes)
+            </span>
           </Cta>
           <span className="hero__micro">Oferta válida solo en septiembre.</span>
+          <span className="hero__micro">
+            Cobro real en USD (${PRICING.standard.usdMonthly}/mes) a través de Skool.
+          </span>
         </Reveal>
       </div>
     </>
