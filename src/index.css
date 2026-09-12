@@ -591,23 +591,44 @@ svg {
   gap: 1.2rem;
   flex-wrap: wrap;
 }
+.hero__cta-main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+.hero__cta-tag {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+  color: var(--yellow);
+}
 .hero__main-cta {
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.3em;
+  gap: 0.15em;
   white-space: normal;
 }
-.hero__main-cta-label {
+.hero__main-cta-price {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.5rem, 3.4vw, 2.2rem);
+  line-height: 1;
+}
+.hero__main-cta-sub {
   display: inline-flex;
   align-items: center;
-  gap: 0.5em;
-}
-.hero__main-cta-price {
+  gap: 0.4em;
   font-family: var(--font-body);
   font-weight: 600;
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   color: rgba(6, 6, 7, 0.7);
   letter-spacing: 0.01em;
+}
+.hero__cta-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
 }
 .hero__micro {
   font-size: 0.85rem;
@@ -620,13 +641,18 @@ svg {
     align-items: stretch;
     gap: 0.9rem;
   }
+  .hero__cta-main {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
   .hero__main-cta {
     align-items: center;
     text-align: center;
     width: 100%;
   }
-  .hero__main-cta-label {
-    justify-content: center;
+  .hero__cta-meta {
+    align-items: center;
   }
   .hero__micro {
     text-align: center;
