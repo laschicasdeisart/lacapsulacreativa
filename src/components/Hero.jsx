@@ -88,18 +88,23 @@ function HeroContent() {
         </div>
 
         <Reveal tag="div" className="hero__cta" delay={0.85}>
-          <Cta href={SKOOL_URL} className="hero__main-cta" arrow={false}>
-            <span className="hero__main-cta-label">
-              ¡Lo necesito ya! <span className="btn__arrow" aria-hidden="true">→</span>
+          <div className="hero__cta-main">
+            <span className="hero__cta-tag">¡Lo necesito ya!</span>
+            <Cta href={SKOOL_URL} className="hero__main-cta" arrow={false}>
+              <span className="hero__main-cta-price">
+                Desde {PRICING.standard.eurMonthlyApprox}€/mes
+              </span>
+              <span className="hero__main-cta-sub">
+                (menos de 20€/mes) <span className="btn__arrow" aria-hidden="true">→</span>
+              </span>
+            </Cta>
+          </div>
+          <div className="hero__cta-meta">
+            <span className="hero__micro">Oferta válida solo en septiembre.</span>
+            <span className="hero__micro">
+              Cobro real en USD (${PRICING.standard.usdMonthly}/mes) a través de Skool.
             </span>
-            <span className="hero__main-cta-price">
-              Desde {PRICING.standard.eurMonthlyApprox}€/mes (menos de 20€/mes)
-            </span>
-          </Cta>
-          <span className="hero__micro">Oferta válida solo en septiembre.</span>
-          <span className="hero__micro">
-            Cobro real en USD (${PRICING.standard.usdMonthly}/mes) a través de Skool.
-          </span>
+          </div>
         </Reveal>
       </div>
     </>
