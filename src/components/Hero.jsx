@@ -93,7 +93,7 @@ function HeroContent() {
               ¡Lo necesito ya! <span className="btn__arrow" aria-hidden="true">→</span>
             </span>
             <span className="hero__main-cta-price">
-              Desde {PRICING.standard.eurMonthlyApprox}€/mes aprox. (menos de 20€/mes)
+              Desde {PRICING.standard.eurMonthlyApprox}€/mes (menos de 20€/mes)
             </span>
           </Cta>
           <span className="hero__micro">Oferta válida solo en septiembre.</span>
