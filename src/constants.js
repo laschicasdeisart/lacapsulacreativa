@@ -28,6 +28,12 @@ export const PRICING = {
 // Precio real de Flowly por separado, usado para anclar el "te ahorras X€".
 export const FLOWLY_PRICE_EUR_MONTHLY = 19;
 
+// Valor reportado a Meta en el evento InitiateCheckout, para que coincida
+// con el € aproximado que se muestra en la propia landing (no con el
+// número en dólares que realmente cobra Skool).
+export const META_INITIATE_CHECKOUT_VALUE = PRICING.standard.eurMonthlyApprox;
+export const META_INITIATE_CHECKOUT_CURRENCY = "EUR";
+
 export const SLIDES = {
   HERO: 0,
   PAIN: 1,
