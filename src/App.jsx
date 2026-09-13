@@ -2,6 +2,7 @@ import { SoundProvider } from "./hooks/SoundContext";
 import { SlideDeckProvider } from "./hooks/SlideDeckContext";
 import Deck from "./components/Deck";
 import SoundToggle from "./components/SoundToggle";
+import CookieConsent from "./components/CookieConsent";
 import Hero from "./components/Hero";
 import Pain from "./components/Pain";
 import Combo from "./components/Combo";
@@ -19,6 +20,7 @@ function App() {
       <SlideDeckProvider total={TOTAL_SLIDES}>
         <div className="noise" />
         <SoundToggle />
+        <CookieConsent />
         <Deck>
           <Hero />
           <Pain />
