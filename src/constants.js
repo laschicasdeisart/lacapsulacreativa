@@ -34,6 +34,15 @@ export const FLOWLY_PRICE_EUR_MONTHLY = 19;
 export const META_INITIATE_CHECKOUT_VALUE = PRICING.standard.eurMonthlyApprox;
 export const META_INITIATE_CHECKOUT_CURRENCY = "EUR";
 
+export const META_PIXEL_ID = "1788439929006625";
+
+export const COOKIE_CONSENT_STORAGE_KEY = "cookie-consent";
+export const LEGAL_LINKS = {
+  avisoLegal: "/aviso-legal/",
+  politicaPrivacidad: "/politica-privacidad/",
+  politicaCookies: "/politica-cookies/",
+};
+
 export const SLIDES = {
   HERO: 0,
   PAIN: 1,

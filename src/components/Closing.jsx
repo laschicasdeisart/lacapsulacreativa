@@ -5,7 +5,7 @@ import Marker from "./Marker";
 import PriceTag from "./PriceTag";
 import Countdown from "./Countdown";
 import { Star, Sparkle } from "./Doodles";
-import { SKOOL_URL, SLIDES } from "../constants";
+import { SKOOL_URL, SLIDES, LEGAL_LINKS } from "../constants";
 
 export default function Closing() {
   return (
@@ -42,6 +42,17 @@ export default function Closing() {
         <Star className="closing__footer-star" color="var(--yellow)" />
         <span>Oferta septiembre 2026</span>
       </footer>
+      <nav className="closing__legal" aria-label="Legal">
+        <a href={LEGAL_LINKS.avisoLegal} target="_blank" rel="noopener noreferrer">
+          Aviso legal
+        </a>
+        <a href={LEGAL_LINKS.politicaPrivacidad} target="_blank" rel="noopener noreferrer">
+          Política de privacidad
+        </a>
+        <a href={LEGAL_LINKS.politicaCookies} target="_blank" rel="noopener noreferrer">
+          Política de cookies
+        </a>
+      </nav>
     </Slide>
   );
 }

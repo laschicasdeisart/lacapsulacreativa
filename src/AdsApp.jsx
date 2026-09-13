@@ -1,6 +1,7 @@
 import { SoundProvider } from "./hooks/SoundContext";
 import ScrollDeck from "./components/ScrollDeck";
 import SoundToggle from "./components/SoundToggle";
+import CookieConsent from "./components/CookieConsent";
 import Hero from "./components/Hero";
 import Pain from "./components/Pain";
 import Combo from "./components/Combo";
@@ -19,6 +20,7 @@ function AdsApp() {
     <SoundProvider>
       <div className="noise" />
       <SoundToggle />
+      <CookieConsent />
       <ScrollDeck>
         <Hero />
         <Pain />

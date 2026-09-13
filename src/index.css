@@ -1423,6 +1423,72 @@ svg {
   width: 0.9rem;
   height: 0.9rem;
 }
+.closing__legal {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem 1rem;
+  padding: 0 var(--edge);
+  margin-top: 0.8rem;
+}
+.closing__legal a {
+  color: var(--white-dim);
+  font-size: 0.72rem;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.closing__legal a:hover {
+  color: var(--turquoise);
+}
+
+/* ---------- cookie consent ---------- */
+.cookie-consent {
+  position: fixed;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 80;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  max-width: 720px;
+  margin: 0 auto;
+  background: var(--black-card);
+  border: 2px solid var(--white-faint);
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1.3rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+.cookie-consent__text {
+  flex: 1 1 260px;
+  font-size: 0.85rem;
+  color: var(--white-dim);
+  line-height: 1.5;
+}
+.cookie-consent__text a {
+  color: var(--turquoise);
+}
+.cookie-consent__actions {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+.cookie-consent__btn {
+  padding: 0.6em 1.2em;
+  font-size: 0.85rem;
+  box-shadow: none;
+}
+@media (max-width: 640px) {
+  .cookie-consent {
+    left: 0.6rem;
+    right: 0.6rem;
+    bottom: 0.6rem;
+    padding: 1rem;
+  }
+}
 
 /* decorative props get in the way on small screens */
 @media (max-width: 640px) {
