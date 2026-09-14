@@ -4,7 +4,7 @@ import Reveal from "./Reveal";
 import Marker from "./Marker";
 import Cta from "./Cta";
 import { Star, Sparkle, Ring } from "./Doodles";
-import { SKOOL_URL, SLIDES, PRICING } from "../constants";
+import { SKOOL_ABOUT_URL, SLIDES, PRICING } from "../constants";
 import { useActiveSlide } from "../hooks/SlideDeckContext";
 
 const titleWords = ["La", "vuelta", "al", "cole", "de", "tu"];
@@ -90,7 +90,7 @@ function HeroContent() {
         <Reveal tag="div" className="hero__cta" delay={0.85}>
           <div className="hero__cta-main">
             <span className="hero__cta-tag">¡Lo necesito ya!</span>
-            <Cta href={SKOOL_URL} className="hero__main-cta" arrow={false}>
+            <Cta href={SKOOL_ABOUT_URL} className="hero__main-cta" arrow={false}>
               <span className="hero__main-cta-price">
                 Desde {PRICING.standard.eurMonthlyApprox}€/mes
               </span>
