@@ -35,6 +35,7 @@ export const META_INITIATE_CHECKOUT_VALUE = PRICING.standard.eurMonthlyApprox;
 export const META_INITIATE_CHECKOUT_CURRENCY = "EUR";
 
 export const META_PIXEL_ID = "1788439929006625";
+export const CLARITY_PROJECT_ID = "ykc9vrnes0";
 
 export const COOKIE_CONSENT_STORAGE_KEY = "cookie-consent";
 export const LEGAL_LINKS = {

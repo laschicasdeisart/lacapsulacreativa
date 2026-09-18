@@ -20,7 +20,7 @@ function AdsApp() {
     <SoundProvider>
       <div className="noise" />
       <SoundToggle />
-      <CookieConsent />
+      <CookieConsent enableClarity />
       <ScrollDeck>
         <Hero />
         <Pain />
