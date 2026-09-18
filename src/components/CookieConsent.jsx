@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { COOKIE_CONSENT_STORAGE_KEY, LEGAL_LINKS } from "../constants";
 import { loadMetaPixel } from "../lib/metaPixel";
+import { loadClarity } from "../lib/clarity";
 
 function readStoredConsent() {
   try {
@@ -12,14 +13,23 @@ function readStoredConsent() {
   }
 }
 
-export default function CookieConsent() {
+// enableClarity: solo la versión /ads.html lo pasa a true por ahora — el
+// resto de analítica/publicidad (píxel de Meta) se carga siempre igual,
+// tras consentimiento.
+export default function CookieConsent({ enableClarity = false }) {
   const [visible, setVisible] = useState(() => {
     const stored = readStoredConsent();
     return stored !== "accepted" && stored !== "rejected";
   });
 
+  const loadAcceptedScripts = () => {
+    loadMetaPixel();
+    if (enableClarity) loadClarity();
+  };
+
   useEffect(() => {
-    if (readStoredConsent() === "accepted") loadMetaPixel();
+    if (readStoredConsent() === "accepted") loadAcceptedScripts();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const decide = (value) => {
@@ -29,7 +39,7 @@ export default function CookieConsent() {
       // Si no se puede guardar, seguimos respetando la elección de esta
       // visita aunque se pierda al recargar.
     }
-    if (value === "accepted") loadMetaPixel();
+    if (value === "accepted") loadAcceptedScripts();
     setVisible(false);
   };
 
@@ -38,8 +48,9 @@ export default function CookieConsent() {
   return (
     <div className="cookie-consent" role="dialog" aria-label="Aviso de cookies">
       <p className="cookie-consent__text">
-        Usamos cookies de publicidad (píxel de Meta) para medir nuestros anuncios. Solo se activan
-        si las aceptas.{" "}
+        Usamos cookies de publicidad (píxel de Meta){enableClarity && " y de analítica (Clarity)"}{" "}
+        para medir nuestros anuncios{enableClarity && " y mejorar la página"}. Solo se activan si
+        las aceptas.{" "}
         <a href={LEGAL_LINKS.politicaCookies} target="_blank" rel="noopener noreferrer">
           Más info
         </a>
