@@ -101,9 +101,6 @@ function HeroContent() {
           </div>
           <div className="hero__cta-meta">
             <span className="hero__micro">Oferta válida solo en septiembre.</span>
-            <span className="hero__micro">
-              Cobro real en USD (${PRICING.standard.usdMonthly}/mes) a través de Skool.
-            </span>
           </div>
         </Reveal>
       </div>
