@@ -343,11 +343,19 @@ svg {
   letter-spacing: 0.04em;
   cursor: pointer;
   backdrop-filter: blur(6px);
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  transition: border-color 0.2s ease, transform 0.2s ease, top 0.2s ease;
 }
 .sound-toggle:hover {
   border-color: var(--turquoise);
   transform: translateY(-2px);
+}
+body.has-cookie-banner .sound-toggle {
+  top: calc(3.25rem + 0.8rem);
+}
+@media (max-width: 640px) {
+  body.has-cookie-banner .sound-toggle {
+    top: calc(4.75rem + 0.6rem);
+  }
 }
 .sound-toggle__bars {
   display: inline-flex;
@@ -1444,49 +1452,87 @@ svg {
 }
 
 /* ---------- cookie consent ---------- */
+/* Barra estrecha pegada al borde superior — nunca sobre un CTA, nunca
+   sobre los controles del carrusel (que viven abajo). Mientras está
+   visible, empuja hacia abajo el resto de la página (deck del carrusel
+   incluido, que va con position:fixed y no reacciona al padding del
+   body) para que tampoco tape el título del Hero. */
+body.has-cookie-banner {
+  padding-top: 3.25rem;
+}
+body.has-cookie-banner .deck {
+  top: 3.25rem;
+  height: calc(100% - 3.25rem);
+}
+@media (max-width: 640px) {
+  body.has-cookie-banner {
+    padding-top: 4.75rem;
+  }
+  body.has-cookie-banner .deck {
+    top: 4.75rem;
+    height: calc(100% - 4.75rem);
+  }
+}
 .cookie-consent {
   position: fixed;
-  left: 1rem;
-  right: 1rem;
-  bottom: 1rem;
-  z-index: 80;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 90;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  gap: 1rem;
-  max-width: 720px;
-  margin: 0 auto;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  min-height: 3.25rem;
   background: var(--black-card);
-  border: 2px solid var(--white-faint);
-  border-radius: var(--radius-md);
-  padding: 1.1rem 1.3rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid var(--white-faint);
+  padding: 0.5rem 1rem;
 }
 .cookie-consent__text {
-  flex: 1 1 260px;
-  font-size: 0.85rem;
+  flex: 1 1 auto;
+  min-width: 200px;
+  max-width: 60ch;
+  font-size: 0.78rem;
   color: var(--white-dim);
-  line-height: 1.5;
+  line-height: 1.4;
+  margin: 0;
 }
 .cookie-consent__text a {
   color: var(--turquoise);
 }
 .cookie-consent__actions {
   display: flex;
-  gap: 0.7rem;
-  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
 }
 .cookie-consent__btn {
-  padding: 0.6em 1.2em;
-  font-size: 0.85rem;
+  padding: 0.42em 1.1em;
+  font-size: 0.78rem;
   box-shadow: none;
+}
+.cookie-consent__btn--reject {
+  background: none;
+  border: none;
+  color: var(--white-dim);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+  padding: 0.42em 0.2em;
+}
+.cookie-consent__btn--reject:hover {
+  color: var(--white);
 }
 @media (max-width: 640px) {
   .cookie-consent {
-    left: 0.6rem;
-    right: 0.6rem;
-    bottom: 0.6rem;
-    padding: 1rem;
+    min-height: 4.75rem;
+    justify-content: flex-start;
+    padding: 0.5rem 0.8rem;
+  }
+  .cookie-consent__text {
+    font-size: 0.74rem;
   }
 }
 
