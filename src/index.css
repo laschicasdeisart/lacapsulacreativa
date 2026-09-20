@@ -1536,6 +1536,57 @@ body.has-cookie-banner .deck {
   }
 }
 
+/* ---------- cookie wall (solo ads.html) ---------- */
+.cookie-wall {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: var(--black);
+}
+.cookie-wall__card {
+  width: 100%;
+  max-width: 440px;
+  background: var(--black-card);
+  border: 2px solid var(--white-faint);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.8rem, 5vw, 2.6rem);
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+.cookie-wall__badge {
+  display: inline-block;
+  font-size: 2.2rem;
+  margin-bottom: 0.8rem;
+}
+.cookie-wall__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 4vw, 1.8rem);
+  font-weight: 800;
+  margin-bottom: 0.8rem;
+}
+.cookie-wall__text {
+  color: var(--white-dim);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0 0 1.8rem;
+}
+.cookie-wall__text a {
+  color: var(--turquoise);
+}
+.cookie-wall__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.cookie-wall__btn {
+  width: 100%;
+  justify-content: center;
+}
+
 /* decorative props get in the way on small screens */
 @media (max-width: 640px) {
   .hero__deco,

@@ -10,7 +10,7 @@ import { useActiveSlide } from "../hooks/SlideDeckContext";
 const titleWords = ["La", "vuelta", "al", "cole", "de", "tu"];
 const chips = ["Ideas", "Guiones", "Calendarios", "Lanzamientos", "Equipo"];
 
-function HeroContent() {
+function HeroContent({ ctaHref }) {
   const isActive = useActiveSlide();
 
   return (
@@ -90,7 +90,7 @@ function HeroContent() {
         <Reveal tag="div" className="hero__cta" delay={0.85}>
           <div className="hero__cta-main">
             <span className="hero__cta-tag">¡Lo necesito ya!</span>
-            <Cta href={SKOOL_ABOUT_URL} className="hero__main-cta" arrow={false}>
+            <Cta href={ctaHref} className="hero__main-cta" arrow={false}>
               <span className="hero__main-cta-price">
                 Desde {PRICING.standard.eurMonthlyApprox}€/mes
               </span>
@@ -108,10 +108,12 @@ function HeroContent() {
   );
 }
 
-export default function Hero() {
+// ctaHref: a qué lleva el botón principal. Por defecto la página "about"
+// (informativa); la versión ads.html pasa la de pagos directamente.
+export default function Hero({ ctaHref = SKOOL_ABOUT_URL }) {
   return (
     <Slide index={SLIDES.HERO} className="hero">
-      <HeroContent />
+      <HeroContent ctaHref={ctaHref} />
     </Slide>
   );
 }

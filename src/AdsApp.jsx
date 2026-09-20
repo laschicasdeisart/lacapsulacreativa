@@ -3,6 +3,7 @@ import ScrollDeck from "./components/ScrollDeck";
 import SoundToggle from "./components/SoundToggle";
 import CookieConsent from "./components/CookieConsent";
 import Hero from "./components/Hero";
+import { SKOOL_URL } from "./constants";
 import Pain from "./components/Pain";
 import Combo from "./components/Combo";
 import ForYou from "./components/ForYou";
@@ -20,9 +21,9 @@ function AdsApp() {
     <SoundProvider>
       <div className="noise" />
       <SoundToggle />
-      <CookieConsent enableClarity />
+      <CookieConsent enableClarity variant="wall" />
       <ScrollDeck>
-        <Hero />
+        <Hero ctaHref={SKOOL_URL} />
         <Pain />
         <Combo />
         <ForYou />
