@@ -20,7 +20,13 @@ function readStoredConsent() {
 // tras consentimiento. Los nombres de las herramientas no van en el
 // banner (solo en la política de cookies), así que el texto no cambia
 // según esta prop.
-export default function CookieConsent({ enableClarity = false }) {
+//
+// variant="wall": pantalla completa, bloquea la página hasta que se
+// decide (Aceptar o Rechazar — las dos opciones desbloquean, ninguna
+// obliga a aceptar para poder ver el contenido). Solo la versión
+// ads.html la usa; el carrusel (index.html) se queda con la barra fina.
+export default function CookieConsent({ enableClarity = false, variant = "bar" }) {
+  const isWall = variant === "wall";
   const [visible, setVisible] = useState(() => {
     const stored = readStoredConsent();
     return stored !== "accepted" && stored !== "rejected";
@@ -36,12 +42,19 @@ export default function CookieConsent({ enableClarity = false }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Mientras el banner está visible, empuja el toggle de sonido (fijo
-  // arriba a la derecha) para que la barra no lo tape.
+  // Barra: empuja el toggle de sonido y el contenido para que no quede
+  // tapado. Muro: bloquea el scroll de la página mientras está abierto.
   useEffect(() => {
+    if (isWall) {
+      const prevOverflow = document.body.style.overflow;
+      if (visible) document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = prevOverflow;
+      };
+    }
     document.body.classList.toggle(BODY_CLASS, visible);
     return () => document.body.classList.remove(BODY_CLASS);
-  }, [visible]);
+  }, [visible, isWall]);
 
   const decide = (value) => {
     try {
@@ -56,14 +69,48 @@ export default function CookieConsent({ enableClarity = false }) {
 
   if (!visible) return null;
 
+  const text = (
+    <p className={isWall ? "cookie-wall__text" : "cookie-consent__text"}>
+      Usamos cookies para mejorar tu experiencia y medir nuestra publicidad.{" "}
+      <a href={LEGAL_LINKS.politicaCookies} target="_blank" rel="noopener noreferrer">
+        Más info
+      </a>
+    </p>
+  );
+
+  if (isWall) {
+    return (
+      <div className="cookie-wall" role="dialog" aria-modal="true" aria-label="Aviso de cookies">
+        <div className="cookie-wall__card">
+          <span className="cookie-wall__badge" aria-hidden="true">
+            🍪
+          </span>
+          <h2 className="cookie-wall__title">Antes de seguir</h2>
+          {text}
+          <div className="cookie-wall__actions">
+            <button
+              type="button"
+              className="btn cookie-wall__btn"
+              onClick={() => decide("accepted")}
+            >
+              Aceptar
+            </button>
+            <button
+              type="button"
+              className="btn btn--ghost cookie-wall__btn"
+              onClick={() => decide("rejected")}
+            >
+              Rechazar
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="cookie-consent" role="dialog" aria-label="Aviso de cookies">
-      <p className="cookie-consent__text">
-        Usamos cookies para mejorar tu experiencia y medir nuestra publicidad.{" "}
-        <a href={LEGAL_LINKS.politicaCookies} target="_blank" rel="noopener noreferrer">
-          Más info
-        </a>
-      </p>
+      {text}
       <div className="cookie-consent__actions">
         <button type="button" className="btn cookie-consent__btn" onClick={() => decide("accepted")}>
           Aceptar
